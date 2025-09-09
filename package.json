@@ -1,0 +1,13 @@
+{
+    "name": "com.byteblast.ide.nvim",
+    "version": "1.0.0",
+    "displayName": "Nvim IDE",
+    "description": "An ide for nvim made by Byte Blast",
+    "dependencies": {
+        "com.unity.ide.vscode": "1.2.5"
+    },
+    "author": {
+        "name": "Byte Blast",
+        "url": "https://byteblast.co"
+    }
+}
