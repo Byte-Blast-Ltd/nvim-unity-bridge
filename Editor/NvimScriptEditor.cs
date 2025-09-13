@@ -25,7 +25,7 @@ public class NvimScriptEditor : IExternalCodeEditor
             StartInfo = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = NvimBridgePath,
-                Arguments = $"{path} {line}",
+                Arguments = $"'{path}' {line}",
                 WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal,
                 CreateNoWindow = true,
                 UseShellExecute = true,

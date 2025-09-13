@@ -39,7 +39,7 @@ focus_terminal() {
 
 if ! nvr --servername /tmp/nvimsocket --remote-expr 1 >/dev/null 2>&1; then
     echo "No server found, starting new..."
-    gnome-terminal --title="$TERMINAL_TITLE" -- bash -c "NVIM_LISTEN_ADDRESS=/tmp/nvimsocket $NVIM +$LINE '$FILE'"
+    gnome-terminal --title="$TERMINAL_TITLE" -- bash -c "NVIM_LISTEN_ADDRESS=/tmp/nvimsocket $NVIM +$LINE \"$FILE\""
 else
     echo "Server found, sending file..."
     nvr --servername /tmp/nvimsocket --remote "$FILE" +$LINE
