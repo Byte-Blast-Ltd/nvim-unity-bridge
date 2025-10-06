@@ -10,8 +10,8 @@ This currently only supports linux. I don't plan to look at windows anytime soon
 - Won't open a new nvim window for every script
 # Dependencies (Tested against)
 - Python 3.10.12
-- pynvim (Install via `python3 -m pip install --user --upgrade pynvim`)
 - nvr 2.5.1
 - xdotool 3.20160805.1
 - GNOME Terminal 3.44.0 using VTE 0.68.0 +BIDI +GNUTLS +ICU +SYSTEMD
 - nvm-lspconfig
+- python3-msgpack
