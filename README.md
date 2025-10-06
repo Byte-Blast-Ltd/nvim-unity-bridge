@@ -4,13 +4,13 @@ A simple, scuffed interface between unity and nvim IDEs. It calls code from `com
 The tool searches for nvim at `/opt/nvim/nvim`. If your path is different, feel free to change it in `Editor/Resources/unity_nvim.sh`
 
 This currently only supports linux. I don't plan to look at windows anytime soon.
-# Installation
+## Installation
 Install via Windows > Package Manager by selecting "Add package from git url"
-# Features
+## Features
 - Opens nvim automatically when opening scripts as it would with other ides.
 - Restarts your lsp whenever Unity recompiles its scripts
 - Won't open a new nvim window for every script
-# Dependencies (Tested against)
+## Dependencies (Tested against)
 - Python 3.10.12
 - nvr 2.5.1
 - xdotool 3.20160805.1
