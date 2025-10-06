@@ -5,6 +5,7 @@ The tool searches for nvim at `/opt/nvim/nvim`. If your path is different, feel 
 
 This currently only supports linux. I don't plan to look at windows anytime soon.
 ## Installation
+![An image of the option to add a package via git url in Unity's Package Manager window](https://github.com/user-attachments/assets/53f937e1-dc0a-4485-adba-3b0f53e2998c)\
 Install via Windows > Package Manager by selecting "Add package from git url"
 ## Features
 - Opens nvim automatically when opening scripts as it would with other ides.
