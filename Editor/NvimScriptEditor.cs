@@ -19,13 +19,13 @@ public class NvimScriptEditor : IExternalCodeEditor
 
     public bool OpenProject(string path, int line, int column)
     {
-        Debug.Log($"opening nvim with args path:{path} line:{line} column:{column}");
+        Debug.Log($"opening nvim with args {path} {line}");
         var process = new System.Diagnostics.Process
         {
             StartInfo = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = NvimBridgePath,
-                Arguments = $"'{path}' {line}",
+                Arguments = $"open '{path}' {line}",
                 WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal,
                 CreateNoWindow = true,
                 UseShellExecute = true,
@@ -94,6 +94,7 @@ public class NvimScriptEditor : IExternalCodeEditor
             StartInfo = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = NvimBridgePath,
+                Arguments = "sync",
                 WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal,
                 CreateNoWindow = true,
                 UseShellExecute = true,
@@ -106,13 +107,6 @@ public class NvimScriptEditor : IExternalCodeEditor
     public void OnGUI()
     {
         VSCodeScriptEditor.OnGUI();
-        var rect = EditorGUI.IndentedRect(EditorGUILayout.GetControlRect(new GUILayoutOption[] { }));
-        rect.width = 252;
-        if (GUI.Button(rect, "Select Nvim File"))
-        {
-            string path = EditorUtility.OpenFilePanel("Select Nvim Bridge", "Assets", "sh");
-            EditorPrefs.SetString("NVIM_BRIDGE", path);
-        }
     }
 
     public void Initialize(string editorInstallationPath) { }

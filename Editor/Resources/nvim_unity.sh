@@ -1,12 +1,11 @@
 #!/bin/bash
 
-FILE="$1"
-LINE="$2"
+CMD="$1"
+FILE="$2"
+LINE="$3"
 INVALID="-1"
 
-echo "Launching for $FILE at $LINE"
-
-if [ -z "$FILE" ]; then
+if [ "$CMD" == "sync" ]; then
     if nvr --servername /tmp/nvimsocket --remote-expr 1 >/dev/null 2>&1; then
         echo "No file provided, sending LspRestart command"
         nvr --servername /tmp/nvimsocket --remote-send ':LspRestart<CR>'
@@ -15,6 +14,9 @@ if [ -z "$FILE" ]; then
         exit 0
     fi
 fi
+
+echo "Launching for $FILE at $LINE"
+
 
 if [ "$LINE" == "$INVALID" ]; then
     LINE=0
